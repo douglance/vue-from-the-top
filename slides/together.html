@@ -5,18 +5,10 @@
       <div style="float:left;">
         <h2>Fizzbuzz</h5>
         <div v-for="i in amount">
-          <div v-if="i % 3 === 0 && i % 5 === 0">
-            <p>FizzBuzz</p>
-          </div>
-          <div v-else-if="i % 3 === 0">
-            <p>Fizz</p>
-          </div>
-          <div v-else-if="i % 5 === 0">
-            <p>Buzz</p>
-          </div>
-          <div v-else>
-            <p>{{ i }}</p>
-          </div>
+          <div v-if="i % 3 === 0 && i % 5 === 0"><p>FizzBuzz</p></div>
+          <div v-else-if="i % 3 === 0"><p>Fizz</p></div>
+          <div v-else-if="i % 5 === 0"><p>Buzz</p></div>
+          <div v-else><p>{{ i }}</p></div>
         </div>
       </div>
       <div style="position: fixed;left:50vw;">
