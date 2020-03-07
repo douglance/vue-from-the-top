@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="app">
+      <div>
+        {{ amount }}
+      </div>
+      <div>
+        <button @click="increment">+1</button>
+      </div>
+    </div>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        amount: 0
+      },
+      methods: {
+        increment() {
+          this.amount++;
+        }
+      }
+    });
+  </script>
+</html>
