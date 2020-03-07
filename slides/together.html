@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="app">
+      <div style="float:left;">
+        <h2>Fizzbuzz</h5>
+        <div v-for="i in amount">
+          <div v-if="i % 3 === 0 && i % 5 === 0">
+            <p>FizzBuzz</p>
+          </div>
+          <div v-else-if="i % 3 === 0">
+            <p>Fizz</p>
+          </div>
+          <div v-else-if="i % 5 === 0">
+            <p>Buzz</p>
+          </div>
+          <div v-else>
+            <p>{{ i }}</p>
+          </div>
+        </div>
+      </div>
+      <div style="float: right;">
+        <h5>Amount:</h5>
+        <input v-model.number="amount" type="number" />
+        <button @click="increment">+1</button>
+      </div>
+    </div>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        amount: 0
+      },
+      methods: {
+        increment() {
+          this.amount++;
+        }
+      }
+    });
+  </script>
+</html>
