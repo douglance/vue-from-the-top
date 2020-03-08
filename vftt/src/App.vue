@@ -15,17 +15,11 @@ export default {
     TodoItem
   },
   data() {
-    return {
-      todos: [
-        {
-          content: "todo1"
-        }
-      ]
-    };
+    return { todos: [{ content: "todo1", status: "incomplete" }] };
   },
   methods: {
     add(content) {
-      this.todos.push({ content });
+      this.todos.push({ content, status: "incomplete" });
     }
   }
 };
