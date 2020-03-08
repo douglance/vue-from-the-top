@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <TodoInput @add="add" />
-    <TodoItem v-for="todo in todos" :todo="todo" :key="todo.content" />
+    <TodoItem v-for="todo in sortedTodos" :todo="todo" :key="todo.content" />
   </div>
 </template>
 
@@ -15,7 +15,13 @@ export default {
     TodoItem
   },
   data() {
-    return { todos: [{ content: "todo1", status: "incomplete" }] };
+    return { todos: [{ content: "Feed the Dog", status: "incomplete" }] };
+  },
+  computed: {
+    sortedTodos() {
+      const arr = this.todos;
+      return arr.sort(a => (a.status === "incomplete" ? -1 : 1));
+    }
   },
   methods: {
     add(content) {
