@@ -1,13 +1,25 @@
 <template>
-  <div :class="todo.status" @click="toggleStatus">
+  <b-list-group-item
+    button
+    :class="todo.status"
+    class="d-flex justify-content-between align-items-center"
+    @click="toggleStatus"
+  >
     {{ todo.content }}
-  </div>
+    <b-button
+      size="sm"
+      variant="danger"
+      class="pull-right"
+      @click="$emit('remove', index)"
+      ><b-icon-trash
+    /></b-button>
+  </b-list-group-item>
 </template>
 
 <script>
 export default {
   name: "TodoItem",
-  props: ["todo"],
+  props: ["todo", "index"],
   data() {
     return {
       content: ""

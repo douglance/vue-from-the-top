@@ -1,7 +1,19 @@
 <template>
   <div id="app">
-    <TodoInput @add="add" />
-    <TodoItem v-for="todo in sortedTodos" :todo="todo" :key="todo.content" />
+    <b-card class="m-2">
+      <TodoInput @add="add" />
+    </b-card>
+    <b-card class="m-2">
+      <b-list-group>
+        <TodoItem
+          v-for="(todo, index) in sortedTodos"
+          :todo="todo"
+          :index="index"
+          :key="todo.content"
+          @remove="remove"
+        />
+      </b-list-group>
+    </b-card>
   </div>
 </template>
 
@@ -26,6 +38,9 @@ export default {
   methods: {
     add(content) {
       this.todos.push({ content, status: "incomplete" });
+    },
+    remove(index) {
+      this.todos.splice(index, 1);
     }
   }
 };
