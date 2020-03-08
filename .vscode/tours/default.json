@@ -1,0 +1,16 @@
+{
+  "title": "Standard",
+  "description": "",
+  "steps": [
+    {
+      "file": "vftt/src/main.js",
+      "line": 8,
+      "description": "Base Vue instance"
+    },
+    {
+      "file": "vftt/src/App.vue",
+      "line": 1,
+      "description": "Default Vue template"
+    }
+  ]
+}
