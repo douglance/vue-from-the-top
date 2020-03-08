@@ -1,9 +1,11 @@
-<!DOCTYPE html>
 <html>
   <body>
     <div id="app">
-      <div v-for="item in arbitraryList">
-        {{ item }}
+      <div v-if="arbitraryBoolean">
+        This is displayed when true
+      </div>
+      <div v-else>
+        This is displayed when false
       </div>
     </div>
   </body>
@@ -14,7 +16,7 @@
     var app = new Vue({
       el: "#app",
       data: {
-        arbitraryList: ["one", "two", "three"]
+        arbitraryBoolean: true
       }
     });
   </script>
